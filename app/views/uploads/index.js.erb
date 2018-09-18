@@ -1,0 +1,19 @@
+ var link = $('#load-more');
+ var filesList = $('.files-list');
+ var uploads = '<%= j render(partial: 'upload', collection: @uploads) %>'
+
+  <% if params[:replace] == '1' %>
+    filesList.html(uploads);
+  <% else %>
+    filesList.append(uploads);
+  <% end %>
+
+uploads
+
+<% if @uploads.next_page %>
+  link.attr('href', '<%= j load_more_uploads_path(@uploads.next_page) %>');
+  link.show();
+<% else %>
+  link.hide();
+<% end %>
+

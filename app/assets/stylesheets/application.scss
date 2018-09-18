@@ -1,0 +1,92 @@
+.files-list {
+  margin-bottom: 10px;
+
+  .file {
+    width: 20%;
+    margin-top: 50px;
+    margin-left: calc(20% / 8);
+    margin-right: calc(20% / 8);
+    padding: 10px;
+    transition: all .2s;
+    border-radius: 2px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(4n+1) {
+      margin-left: 0;
+    }
+
+    .image {
+      height: 150px;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+      }
+      i {
+        margin-left: 33%;
+      }
+    }
+
+    .info {
+      margin-top: 20px;
+
+      span {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .name {
+        margin-bottom: 0;
+        font-size: 12px;
+      }
+
+      .uploaded {
+        font-size: 13px;
+        color: #0000FF;
+      }
+
+      .actions {
+        opacity: 0;
+        transition: all .2s;
+        font-weight: bold;
+        margin-top: 5px;
+
+        a {
+          display: inline-block;
+          margin-right: 10px;
+          color: #0000FF;
+
+          &.delete {
+            color: #FF0000;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 3px rgba(#0000FF, .5);
+
+      .info .actions {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.upload-dialog {
+
+  .warning {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #BBBBBB;
+  }
+}
+

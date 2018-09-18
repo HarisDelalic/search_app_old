@@ -1,0 +1,17 @@
+<%= form_tag uploads_path, method: :get, remote: true, enforce_utf8: :true do %>
+  Search:
+  <%= label_tag :search do %>
+    <%= text_field_tag :search, params[:search], id: 'search-input',  enforce_utf8: :false, placeholder: 'Search by name' %>
+    <%= hidden_field_tag :replace, 1 %>
+    <span class="i-search"></span>
+  <% end %>
+<% end %>
+<br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br />
+
+<div class="files-list">
+  <%= render(partial: 'upload', collection: @uploads) %>
+</div>
+
+<%= link_to "Load More ", load_more_uploads_path(@uploads.next_page), id: "load-more", remote: :true, style: "display: #{@uploads.next_page ? 'inline_block' : 'none'}" %>
+
